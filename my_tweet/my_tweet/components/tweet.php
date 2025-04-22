@@ -7,13 +7,12 @@
     <div class="ml-4 flex-1">
         <!-- ユーザ情報 -->
         <div class="flex items-center">
-            <span class="font-bold text-gray-900">Dummy</span>
-            <span class="ml-2 text-gray-500 text-sm">2025/01/01</span>
+            <span class="font-bold text-gray-900"><?= $value['account_name'] ?></span>
+            <span class="ml-2 text-gray-500 text-sm"><?= $value['created_at'] ?></span>
         </div>
         <!-- ツイートテキスト -->
         <div class="mt-2 mb-2 text-gray-800">
-            あけましておめでとうございます！<br>
-            今年もよろしくお願いします！<br>
+            <?= nl2br($value['message']) ?>
         </div>
         <!-- ナビゲーション（アクション系アイコン） -->
         <nav class="mt-3 mb-3">
@@ -27,7 +26,7 @@
                 <li class="flex">
                     <a href="#" class="inline-flex items-center space-x-2">
                         <img src="svg/heart.svg" class="w-4" alt="いいね">
-                        <span class="text-gray-600 text-xs">333</span>
+                        <span.class"text-gray-600"><?= $value['like_count'] ?></span>
                     </a>
                 </li>
                 <li>

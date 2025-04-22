@@ -18,13 +18,9 @@ $account_name = $_POST['account_name'];
 $password = $_POST['password'];
 
 // TODO: ユーザ認証: new User() で auth() を実行
-$auth_user = [];
-if ($account_name === 'test') {
-    $auth_user['id'] = 1; 
-} else {
-    $auth_user['id'] = null; 
-}
-
+$user = new User();
+$auth_user = $user->auth($account_name, $password);
+// var_dump($auth_user);
 if (empty($auth_user['id'])) {
     // ログイン失敗時はログイン入力画面にリダイレクト
     header('Location: input.php');
